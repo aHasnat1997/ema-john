@@ -3,7 +3,7 @@ import logo from '../assets/images/Logo.svg';
 
 const Nav = () => {
   return (
-    <div className='bg-primary'>
+    <div className='bg-primary w-full fixed top-0 z-50'>
       <div className="navbar max-w-screen-xl mx-auto">        
         <div className="flex-1">
           <a href='../../index.html' className="btn btn-ghost normal-case text-xl">
