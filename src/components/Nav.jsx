@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/images/Logo.svg';
 import totalCalculation from '../utilities/totalCalculation';
 import shopFunction from '../utilities/shopFunction';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
+  const [open, setOpen] = useState(false);
   // console.log(card);
   const { card } = shopFunction();
   console.log(card);
@@ -19,7 +22,7 @@ const Nav = () => {
           </a>
         </div>
         <div className="flex-none">
-          <ul className='text-white flex gap-4'>
+          <ul className={`lg:text-white lg:flex gap-4 absolute ${open ? '-top-72' : 'top-16'} right-8 text-right bg-secondary lg:bg-primary p-4 text-black lg:static`}>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/shop'>Shop</Link></li>
             <li><Link to='/about'>About Us</Link></li>
@@ -58,6 +61,11 @@ const Nav = () => {
               <li><a>Settings</a></li>
               <li><a>Logout</a></li>
             </ul>
+          </div>
+          <div onClick={() => setOpen(!open)} className='lg:hidden'>
+            {
+              open ? <FontAwesomeIcon className='text-2xl ml-4 text-white' icon={faBars} /> : <FontAwesomeIcon className='text-4xl ml-4 text-white' icon={faXmark} />
+            }
           </div>
         </div>
       </div>
