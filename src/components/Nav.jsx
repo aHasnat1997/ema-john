@@ -1,20 +1,30 @@
 import React from 'react';
 import logo from '../assets/images/Logo.svg';
 import totalCalculation from '../utilities/totalCalculation';
+import shopFunction from '../utilities/shopFunction';
+import { Link } from 'react-router-dom';
 
-const Nav = ({ card }) => {
+const Nav = () => {
   // console.log(card);
+  const { card } = shopFunction();
+  console.log(card);
   const total = totalCalculation(card);
 
   return (
     <div className='bg-primary w-full fixed top-0 z-50'>
       <div className="navbar max-w-screen-xl mx-auto">
         <div className="flex-1">
-          <a href='../../index.html' className="btn btn-ghost normal-case text-xl">
+          <a href='/' className="btn btn-ghost normal-case text-xl">
             <img src={logo} alt="logo" />
           </a>
         </div>
         <div className="flex-none">
+          <ul className='text-white flex gap-4'>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/shop'>Shop</Link></li>
+            <li><Link to='/about'>About Us</Link></li>
+            <li><Link to='/contact'>Contact Us</Link></li>
+          </ul>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator text-white">

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import shopFunction from '../utilities/shopFunction';
 import Order from './Order';
 import Product from './Product';
 
-const Shop = ({addToCard, card, products}) => {
+const Shop = () => {
+  const { card, addToCard, products } = shopFunction();
+
   // console.log(props);
   return (
     <div>
