@@ -22,7 +22,7 @@ const Nav = () => {
           </a>
         </div>
         <div className="flex-none">
-          <ul className={`lg:text-white lg:flex gap-4 absolute ${open ? '-top-72' : 'top-16'} right-8 text-right bg-secondary lg:bg-primary p-4 text-black lg:static`}>
+          <ul className={`lg:text-white lg:flex gap-4 absolute ${open ? '-top-72' : 'top-16'} right-0 text-right bg-secondary lg:bg-primary p-4 text-black lg:static`}>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/shop'>Shop</Link></li>
             <li><Link to='/about'>About Us</Link></li>
@@ -40,7 +40,7 @@ const Nav = () => {
                 <span className="font-bold text-lg">{total.quantity} Items Add</span>
                 <span className="text-primary">Total: ${parseFloat(total.total.toFixed(2))}</span>
                 <div className="card-actions">
-                  <button className="btn btn-primary btn-block">View cart</button>
+                  <Link to='/viewcart' className="btn btn-primary btn-block">View cart</Link>
                 </div>
               </div>
             </div>

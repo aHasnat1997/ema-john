@@ -7,6 +7,7 @@ import Shop from './components/Shop';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import ViewCart from './components/ViewCart';
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,14 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />
+      },
+      {
+        path: 'viewcart',
+        element: <ViewCart />
       }
     ]
   }
-])
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
