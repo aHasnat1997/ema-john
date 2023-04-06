@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'viewcart',
-        element: <ViewCart />
+        element: <ViewCart />,
+        loader: () => fetch('products.json')
       }
     ]
   }

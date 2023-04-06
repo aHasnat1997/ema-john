@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/images/Logo.svg';
 import totalCalculation from '../utilities/totalCalculation';
 import shopFunction from '../utilities/shopFunction';
@@ -7,10 +7,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
-  const [open, setOpen] = useState(false);
-  // console.log(card);
   const { card } = shopFunction();
-  console.log(card);
+  const [open, setOpen] = useState(false);
+
+  // const [newCard, setNewCard] = useState([]);
+  // useEffect(() => {
+  //   setNewCard(card);
+  // }, []);
+
+  // console.log(card);
   const total = totalCalculation(card);
 
   return (
@@ -22,7 +27,7 @@ const Nav = () => {
           </a>
         </div>
         <div className="flex-none">
-          <ul className={`lg:text-white lg:flex gap-4 absolute ${open ? '-top-72' : 'top-16'} right-0 text-right bg-secondary lg:bg-primary p-4 text-black lg:static`}>
+          <ul className={`lg:text-white lg:flex gap-4 absolute ${open ? 'top-16' : '-top-72'} right-0 text-right bg-secondary lg:bg-primary p-4 text-black lg:static`}>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/shop'>Shop</Link></li>
             <li><Link to='/about'>About Us</Link></li>
@@ -64,7 +69,7 @@ const Nav = () => {
           </div>
           <div onClick={() => setOpen(!open)} className='lg:hidden'>
             {
-              open ? <FontAwesomeIcon className='text-2xl ml-4 text-white' icon={faBars} /> : <FontAwesomeIcon className='text-4xl ml-4 text-white' icon={faXmark} />
+              open ? <FontAwesomeIcon className='text-4xl ml-4 text-white' icon={faXmark} /> : <FontAwesomeIcon className='text-2xl ml-4 text-white' icon={faBars} />
             }
           </div>
         </div>

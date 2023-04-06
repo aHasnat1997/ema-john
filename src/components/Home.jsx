@@ -6,7 +6,6 @@ import ecom from "../assets/ecommerce.json";
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  console.log('Home...');
   return (
     <div className='max-w-screen-xl mx-auto px-7 lg:flex items-center my-24 lg:my-40'>
       <div className='flex flex-col gap-6 lg:w-1/2'>
